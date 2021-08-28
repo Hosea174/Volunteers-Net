@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/contact.css">
+{% endblock %}
+
+
+
+{% block main %}
+<section id="contact-page">
+
+    <div id="contact-us">
+        <div id="contact-form">
+            <h2>Send us a message</h2>
+            <form class="my-form" action="/contact" method='POST'>
+                <input autocomplete="off" type="email" name="email" placeholder="Email" required>
+                <input autocomplete="off" type="password" name="password" placeholder="Password" required>
+                <input autocomplete="off" type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" id="message" cols="30" rows="7" placeholder="Message" required></textarea>
+                <input type="submit" name="Send Message" value="Send Message">
+            </form>
+        </div>
+
+        <div id="contact-info">
+            <h2> <span style="border-bottom: solid #efc900 4px;">Cont</span>act us</h2>
+            <h3>We’re open for any suggestion or just to have a chat</h3>
+            <div class="info adress">
+
+                <p><i class="material-icons">location_on</i><span style="color: rgb(180, 25, 180)"> Adress: </span>Bole,
+                    Addis Ababa, Ethiopia</p>
+            </div>
+            <div class="info phone">
+                <p><i class="material-icons">phone</i><span style="color: rgb(180, 25, 180)"> Phone: </span>+251 91
+                    253 1203</p>
+            </div>
+            <div class="info email">
+                <p><i class="material-icons">send</i><span style="color: rgb(180, 25, 180)"> Email:
+                    </span>volunteersnet@tx.co</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

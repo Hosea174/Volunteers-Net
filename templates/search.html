@@ -1,0 +1,195 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/search.css">
+{% endblock %}
+
+{% block js %}
+<script src="/static/script.js"></script>
+{% endblock %}
+
+
+{% block main %}
+<section id="search-results">
+    <h1>Filter results</h1>
+    <!-- filter results -->
+    <div id="filter">
+        <form action="/search" autocomplete="off" method="GET">
+            <div class="location">
+                <div class="country-box">
+                    <span style="color:#880071; font-size: 20px;">Country</span>
+                    <input required type="text" class="form-control" id="country" name="country">
+                </div>
+
+                <div class="city-box">
+                    <span style="color:#880071; font-size: 20px; margin-right: 10px;">City</span>
+                    <input required type="text" class="form-control" id="city" name="city">
+                </div>
+
+            </div>
+
+            <hr>
+            <div class="ages">
+                <span style="color:#880071; font-size: 20px; margin-right: 40px;">Age</span>
+                <input type="radio" name="age" id="10-14" value="10-14">
+                <label for="10-14">10-14</label>
+
+                <input selected type="radio" name="age" id="15-19" value="15-19">
+                <label for="15-19">15-19</label>
+
+                <input type="radio" name="age" id="20-30" value="20-30">
+                <label for="20-30">20-30</label>
+
+                <input type="radio" name="age" id="30-40" value="30-40">
+                <label for="30-40">30-40</label>
+
+                <input type="radio" name="age" id="40+" value="40+">
+                <label for="40+">40+</label>
+            </div>
+
+
+            <hr>
+            <div class="days">
+                <span style="color:#880071; font-size: 20px; margin-right: 40px;">Days</span>
+                <div class="days-list">
+                    <div class="days-cat-1">
+                        <input type="checkbox" name="days" value="monday" id="monday">
+                        <label for="monday">Monday</label>
+                        <input type="checkbox" name="days" value="tuesday" id="tuesday">
+                        <label for="tuesday">Tuesday</label>
+                        <input type="checkbox" name="days" value="wednesday" id="wednesday">
+                        <label for="wednesday">Wednesday</label>
+                        <input type="checkbox" name="days" value="thursday" id="thursday">
+                        <label for="thursday">Thursday</label>
+                    </div>
+                    <div class="days-cat-2">
+                        <input type="checkbox" name="days" value="friday" id="friday">
+                        <label for="friday">Friday</label>
+                        <input type="checkbox" name="days" value="saturday" id="saturday">
+                        <label for="saturday">Saturday</label>
+                        <input type="checkbox" name="days" value="sunday" id="sunday">
+                        <label for="sunday">Sunday</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr>
+            <div class="activities">
+                <span style="color:#880071; font-size: 20px; margin-right: 10px;">Activities</span>
+                <div class="activities">
+                    <div class="column">
+                        <div>
+                            <input type="checkbox" name="activities" value="taking-care" id="taking-care">
+                            <label for="taking-care">Taking care of children</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="activities" value="teaching" id="teaching">
+                            <label for="teaching">Tutoring students</label> <br>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div>
+                            <input type="checkbox" name="activities" value="sports" id="sports">
+                            <label for="sports">Sports</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="activities" value="arts" id="arts">
+                            <label for="arts">Arts and crafts</label> <br>
+                        </div>
+                    </div class="column">
+
+                    <div class="column">
+                        <div>
+                            <input type="checkbox" name="activities" value="mentoring" id="mentoring">
+                            <label for="mentoring">Mentoring</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="activities" value="other" id="other">
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="other-box">
+                <span style="color:#880071; font-size: 20px;">Other</span>
+                <input class="form-control" type="text" id="other-text" name="other-text">
+            </div>
+            <br>
+            <input type="submit" value="Filter">
+        </form>
+    </div>
+
+    <!-- search results -->
+    <div class="results">
+        {% if no_results %}
+        <p style="font-size: 20px; text-align: center; font-size: 300%;">{{ no_results }}</p>
+        {% else %}
+        {% for volunteer in search_results %}
+        <div class="applicant">
+            <div class="about-user">
+                <p>Name: {{volunteer.fname + ' ' + volunteer.lname}}</p>
+                <p>Age: {{volunteer.age}}</p>
+                <p>Country: {{volunteer.country}}</p>
+                <p>City: {{volunteer.city}}</p>
+            </div>
+
+            <div class="user-activities">
+                <div class="row">
+                    {% for activity in volunteer.activities[:3] %}
+                    <div class="activity">
+                        {{activity}}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row">
+                    {% for activity in volunteer.activities[3:] %}
+                    <div class="activity">
+                        {{activity}}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="user-available-days">
+                <div class="row">
+                    {% for day in volunteer.days[:4] %}
+                    <div class="day">
+                        {{day}}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row">
+                    <div class="row">
+                        {% for day in volunteer.days[4:] %}
+                        <div class="day">
+                            {{day}}
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+
+            <button type='button' class="btn btn-success request" id="{{volunteer.applicant_id}}"
+                onclick="requested(this.id)">
+                request
+            </button>
+
+            <div id="msg-{{volunteer.applicant_id}}" class="already-requested" style="color: red;">
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</section>
+{% endblock %}

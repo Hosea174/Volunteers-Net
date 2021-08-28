@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Signup
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/form.css">
+{% endblock %}
+
+{% block js %}
+<script src="/static/script.js"></script>
+{% endblock %}
+
+{% block main %}
+<section id="register">
+    <div class="wrapper">
+        <h1>Register</h1>
+        <div class="main-agileinfo">
+
+            <form action="/signup" method="post">
+                <div class="form-group">
+                    <input class="text form-control" type="text" name="username" placeholder="Username" required>
+                    <input class="text email form-control" type="email" name="email" placeholder="Email" required>
+                    <input class="text form-control" type="text" id="company" name="company" placeholder="Company Name"
+                        style="display: none">
+                    <input class="text form-control" type="password" name="password1" placeholder="Password" required>
+                    <input class="text form-control" type="password" name="password2" placeholder="Confirm Password"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <input id="agreement" type="checkbox" required>
+                    <label for="agreement">I Agree To The Terms & Conditions</label>
+                    <br>
+                    <input id="volunteer" value="volunteer" type="radio" onclick="userMode(this.id)" checked
+                        name="mode">
+                    <label for="volunteer">I am a volunteer</label>
+                    <input id="recruiter" value="recruiter" type="radio" onclick="userMode(this.id)" name="mode"
+                        style="margin-left: 30px;">
+                    <label for="recruiter">I am a non-profit company</label>
+                </div>
+
+                <input type="submit" value="SIGN UP">
+            </form>
+            <p>Already a member? <a href="/login"> Login</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

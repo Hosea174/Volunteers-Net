@@ -1,0 +1,115 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+/* navbar */
+img[id="logo"] {
+  position: fixed;
+  top: 0px;
+  width: 132px;
+  height: 60px;
+}
+#menus {
+  position: absolute;
+  right: 20px;
+}
+#menus li {
+  font-size: 18px;
+  width: 90px;
+  transition: 0.3s;
+  transition-property: background-color;
+}
+#menus li:hover {
+  background-color: #efc900;
+}
+.nav-link {
+  text-align: center;
+  padding: 18px 23px;
+  color: rgb(255, 255, 255) !important;
+  transition: 0.5s;
+  transition-property: color;
+}
+.nav-link:hover {
+  color: #fff !important;
+}
+
+#my-nav-bar {
+  background-color: #2f3936;
+  height: 63px;
+}
+
+body {
+  background-color: #ecc80f;
+}
+.wrapper {
+  color: white;
+  width: 433px;
+  height: 70vh;
+  margin: 100px auto;
+}
+.wrapper h1 {
+  text-decoration: underline;
+  color: blueviolet;
+  margin: auto;
+}
+.main-agileinfo {
+  width: 100%;
+  background-color: rgba(185, 97, 196, 0.589);
+  height: 84%;
+  box-shadow: 4px 6px 8px 2px rgba(0, 0, 0, 0.25);
+  margin-top: 30px;
+  padding: 20px;
+}
+.text {
+  width: 90%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 10px;
+  padding: 5px 50px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+}
+input[type="submit"]:hover {
+  background-color: khaki;
+}
+.main-agileinfo p {
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+@media (max-width: 768px) {
+  .navbar-nav {
+    background-color: #2f3936;
+  }
+  #menus {
+    right: 0;
+    width: 200px;
+    max-height: 500px;
+    justify-content: center;
+    align-items: center;
+  }
+  #menus li {
+    margin-bottom: 20px;
+  }
+  #menus li:hover {
+    background-color: transparent;
+  }
+  .nav-link:hover {
+    color: #efc900 !important;
+    text-decoration: underline;
+  }
+}

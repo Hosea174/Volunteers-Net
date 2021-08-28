@@ -1,0 +1,201 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/style.css">
+{% endblock %}
+
+
+
+{% block main %}
+<section id="landing">
+    <div class="container">
+        <div class='web-info'>
+            <h1>Find a place where you <br> can volunteer</h1>
+            <h2>Are you a non-profit organization looking for volunteers? <br>Start working with us now!</h2>
+
+            {% if session.user_mode == "volunteer" %}
+            <a class="btn" href="/volunteer-form">
+                <span>Get started</span>
+            </a>
+            {% elif session.user_mode == "recruiter" %}
+            <a class="btn" href="/search">
+                <span>Get started</span>
+            </a>
+            {% else %}
+            <a class="btn" href="/signup">
+                <span>Get started</span>
+            </a>
+            {% endif %}
+
+
+        </div>
+    </div>
+
+    <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 130" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                <stop stop-color="rgba(89, 182, 146, 1)" offset="0%" data-darkreader-inline-stopcolor=""
+                    style="--darkreader-inline-stopcolor:#3b8771;"></stop>
+                <stop stop-color="rgba(89, 182, 146, 1)" offset="100%" data-darkreader-inline-stopcolor=""
+                    style="--darkreader-inline-stopcolor:#3b8771;"></stop>
+            </linearGradient>
+        </defs>
+        <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)"
+            d="M0,26L48,28.2C96,30,192,35,288,49.8C384,65,480,91,576,93.2C672,95,768,74,864,54.2C960,35,1056,17,1152,10.8C1248,4,1344,9,1440,19.5C1536,30,1632,48,1728,58.5C1824,69,1920,74,2016,69.3C2112,65,2208,52,2304,47.7C2400,43,2496,48,2592,41.2C2688,35,2784,17,2880,19.5C2976,22,3072,43,3168,47.7C3264,52,3360,39,3456,30.3C3552,22,3648,17,3744,32.5C3840,48,3936,82,4032,84.5C4128,87,4224,56,4320,56.3C4416,56,4512,87,4608,82.3C4704,78,4800,39,4896,21.7C4992,4,5088,9,5184,21.7C5280,35,5376,56,5472,58.5C5568,61,5664,43,5760,30.3C5856,17,5952,9,6048,23.8C6144,39,6240,78,6336,86.7C6432,95,6528,74,6624,56.3C6720,39,6816,26,6864,19.5L6912,13L6912,130L6864,130C6816,130,6720,130,6624,130C6528,130,6432,130,6336,130C6240,130,6144,130,6048,130C5952,130,5856,130,5760,130C5664,130,5568,130,5472,130C5376,130,5280,130,5184,130C5088,130,4992,130,4896,130C4800,130,4704,130,4608,130C4512,130,4416,130,4320,130C4224,130,4128,130,4032,130C3936,130,3840,130,3744,130C3648,130,3552,130,3456,130C3360,130,3264,130,3168,130C3072,130,2976,130,2880,130C2784,130,2688,130,2592,130C2496,130,2400,130,2304,130C2208,130,2112,130,2016,130C1920,130,1824,130,1728,130C1632,130,1536,130,1440,130C1344,130,1248,130,1152,130C1056,130,960,130,864,130C768,130,672,130,576,130C480,130,384,130,288,130C192,130,96,130,48,130L0,130Z">
+        </path>
+    </svg>
+</section>
+
+<!-- slide about us -->
+<section id="about-us">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="slide-container">
+                    <div id="About-slide" class="description">
+                        <h2>About Us</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Itaque officia amet perspiciatis et sit cupiditate,
+                            voluptas necessitatibus! Iste hic, in sequi laborum
+                            quae nemo natus laboriosam enim, veniam eum numquam.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Sint eaque error consectetur atque.
+                        </p>
+                    </div>
+                    <img id="img1" src="/static/images/help.jpg" class="d-block">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="slide-container">
+                    <div id="participate-slide" class="description">
+                        <h2>​How to participate</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Itaque officia amet perspiciatis et sit cupiditate,
+                            voluptas necessitatibus! Iste hic, in sequi laborum
+                            quae nemo natus laboriosam enim, veniam eum numquam.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Sint eaque error consectetur atque.
+                        </p>
+                    </div>
+                    <img src="/static/images/friends.jpg" class="d-block">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="slide-container">
+                    <div id="what-we-do-slide" class="description">
+                        <h2>What We Do</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Itaque officia amet perspiciatis et sit cupiditate,
+                            voluptas necessitatibus! Iste hic, in sequi laborum
+                            quae nemo natus laboriosam enim, veniam eum numquam.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Sint eaque error consectetur atque.
+                        </p>
+                    </div>
+                    <img src="static/images/holding hands.jpg" class="d-block">
+                </div>
+            </div>
+        </div>
+
+        <a id="control1" class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+            data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a id="control2" class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+            data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <blockquote class="otro-blockquote">
+        ​You have not lived today until you have done something for someone who can never repay you​.
+        <span>John Bunyan</span>
+    </blockquote>
+</section>
+
+<section id="last">
+    <div id="discover">
+
+        <a class="circle" style="background-color: #01a171;" href="/search">
+            <p>
+                Recruit volunteers in your area
+            </p>
+        </a>
+
+        <a class="circle" style="background-color: #758BFD;" href="/vform">
+            <p>
+                Volunteer in diferent activities of your interest
+            </p>
+        </a>
+
+        <a class="circle" style="background-color: #6F4E37;" href="/">
+            <p>
+                Buy us a coffee
+                <br>
+                <span style="color: rgb(245, 0, 0); font-size: 30px;">&#10084;</span>
+            </p>
+        </a>
+    </div>
+    <div id="newsletter">
+        <h3>Join our Newsletter</h3>
+        Subscribe to our newsletter to recieve updates
+        <form action="/subscribe" autocomplete="off" method="post">
+            <input name="email" type="email" placeholder="Enter Your Email" required>
+            <br>
+            <input type="submit" value="subscribe">
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+
+
+<footer>
+    <section class="my-footer">
+        <div>
+            <ul class="footer-links">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/volunteer-form'">Form</a>
+                </li>
+                <li>
+                    <a href="/signup">Sign up</a>
+                </li>
+            </ul>
+        </div>
+        <div id="social-media">
+            <img src="static/images/facebook-5-64 1.png" alt="facebook">
+            <img src="static/images/instagram-5-64 1.png" alt="instagram">
+            <img src="static/images/pinterest-5-64 1.png" alt="pinterest">
+        </div>
+        <p id="copyright">Copyright© 2021 Volunteers Network, Addis Ababa, Ethiopia All rights reserved.</p>
+    </section>
+</footer>
+{% endblock %}

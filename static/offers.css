@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+/* navbar */
+img[id="logo"] {
+  position: fixed;
+  top: 0px;
+  width: 132px;
+  height: 60px;
+}
+#menus {
+  position: absolute;
+  right: 20px;
+}
+#menus li {
+  font-size: 18px;
+  width: 90px;
+  transition: 0.3s;
+  transition-property: background-color;
+}
+#menus li:hover {
+  background-color: #efc900;
+}
+.nav-link {
+  text-align: center;
+  padding: 18px 23px;
+  color: rgb(255, 255, 255) !important;
+  transition: 0.5s;
+  transition-property: color;
+}
+.nav-link:hover {
+  color: #fff !important;
+}
+
+#my-nav-bar {
+  background-color: #2f3936;
+  height: 63px;
+}
+
+#offers {
+  position: absolute;
+  top: 70px;
+  margin-left: 5%;
+  font-size: 40px;
+}
+#offers-table {
+  position: absolute;
+  top: 150px;
+  margin: auto 5%;
+  width: 90%;
+}
+.btn {
+  margin: 0 4px;
+  padding: 2px 5px;
+}
+p {
+  position: absolute;
+  top: 97px;
+  margin-left: 5%;
+  margin-top: 10px;
+  color: seagreen;
+  padding-top: 20px;
+}
+
+.list {
+  list-style: none;
+}
+tr:nth-child(even) {
+  background-color: rgb(41, 158, 158);
+}
+.table .thead-dark th {
+  color: #e79aff;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    background-color: #2f3936;
+  }
+  #menus {
+    right: 0;
+    width: 200px;
+    max-height: 500px;
+    justify-content: center;
+    align-items: center;
+  }
+  #menus li {
+    margin-bottom: 20px;
+  }
+  #menus li:hover {
+    background-color: transparent;
+  }
+  .nav-link:hover {
+    color: #efc900 !important;
+    text-decoration: underline;
+  }
+}
+@media (max-width: 1062px) {
+  #offers {
+    font-size: 35px;
+  }
+  table {
+    font-size: 13px;
+  }
+}

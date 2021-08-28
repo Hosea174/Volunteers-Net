@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Form
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/vform.css">
+
+{% endblock %}
+
+{% block main %}
+<section id="volunteer-form">
+    <h1>Volunteer Form</h1>
+    <form class="vform" action="/volunteer-form'" autocomplete="off" method="POST">
+
+        <!-- personal information of the volunteer -->
+        <div class="personal-info">
+            <h2>Please fill out the boxes below</h2>
+            <div class="info-container">
+                <div style="width: 45%; float: left;">
+                    <input required class="input-bars form-control" type="text" id="fname" name="fname"
+                        placeholder="First Name">
+                    <input required class="input-bars form-control" type="number" id="age" name="age" placeholder="Age"
+                        min="1">
+                    <input required class="input-bars form-control" type="country" id="country" name="country"
+                        placeholder="Country">
+                    <input required class="input-bars form-control" type="text" id="street1" name="street1"
+                        placeholder="Street 1">
+                </div>
+
+                <div style="width: 45%; float: right;">
+                    <input required class="input-bars form-control" type="text" id="lname" name="lname"
+                        placeholder="Last Name">
+
+                    <input required class="input-bars form-control" type="tel" id="phone" name="phone"
+                        placeholder="Phone">
+
+                    <input required class="input-bars form-control" type="text" id="city" name="city"
+                        placeholder="City">
+
+                    <input class="input-bars form-control" type="text" id="street2" name="street2"
+                        placeholder="Street 2">
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <!-- days that the volunteers can participate on -->
+        <div class="available-days">
+            <h2>Which days are you available to volunteer</h2>
+            <div class="days">
+                <div class="days-cat-1">
+                    <div class="day">
+                        <input type="checkbox" name="days" value="monday" id="monday">
+                        <label for="monday">Monday</label>
+                    </div>
+                    <div class="day">
+                        <input type="checkbox" name="days" value="tuesday" id="tuesday">
+                        <label for="tuesday">Tuesday</label>
+                    </div>
+                    <div class="day">
+                        <input type="checkbox" name="days" value="wednesday" id="wednesday">
+                        <label for="wednesday">Wednesday</label>
+                    </div>
+                    <div class="day">
+                        <input type="checkbox" name="days" value="thursday" id="thursday">
+                        <label for="thursday">Thursday</label>
+                    </div>
+                </div>
+
+
+                <div class="days-cat-2">
+                    <div class="day">
+                        <input type="checkbox" name="days" value="friday" id="friday">
+                        <label for="friday">Friday</label>
+                    </div>
+                    <div class="day">
+                        <input type="checkbox" name="days" value="saturday" id="saturday">
+                        <label for="saturday">Saturday</label>
+                    </div>
+                    <div class="day">
+                        <input type="checkbox" name="days" value="sunday" id="sunday">
+                        <label for="sunday">Sunday</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- checkbox of different activities  -->
+        <div class="select-activities">
+            <h2>Select activities</h2>
+            <div class="activities">
+                <div class="column">
+                    <div>
+                        <input type="checkbox" name="activities" value="taking-care" id="taking-care">
+                        <label for="taking-care">Taking care of children</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="activities" value="teaching" id="teaching">
+                        <label for="teaching">Teaching/Tutoring students</label> <br>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="activities" value="sports" id="sports">
+                        <label for="sports">Sports</label>
+                    </div>
+                </div>
+                <div class="column">
+                    <div>
+                        <input type="checkbox" name="activities" value="arts" id="arts">
+                        <label for="arts">Arts and crafts</label> <br>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="activities" value="mentoring" id="mentoring">
+                        <label for="mentoring">Mentoring</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="activities" value="other" id="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input class="other-text form-control" type="text" autocomplete="off" id="other-text" name="other-text"
+            placeholder="Other">
+        <br>
+        <input type="submit" value="submit">
+    </form>
+</section>
+
+{% endblock %}
+
+
+
+{% block footer %}
+<section class="my-footer">
+    <div>
+        <ul class="footer-links">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/about">About</a>
+            </li>
+            <li>
+                <a href="/contact">Contact</a>
+            </li>
+            <li>
+                <a href="/volunteer-form'">Form</a>
+            </li>
+            <li>
+                <a href="/login">Sign up</a>
+            </li>
+        </ul>
+    </div>
+    <div id="social-media">
+        <img src="static/images/facebook-5-64 1.png" alt="facebook">
+        <img src="static/images/instagram-5-64 1.png" alt="instagram">
+        <img src="static/images/pinterest-5-64 1.png" alt="pinterest">
+    </div>
+    <p id="copyright">Copyright© 2021 Volunteers Network, Addis Ababa, Ethiopia All rights reserved.</p>
+</section>
+
+
+{% endblock %}
