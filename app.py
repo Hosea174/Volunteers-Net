@@ -31,8 +31,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL(os.getenv("DATABASE_URL"))
-# db = SQL("sqlite:///volunteersNet.db")
+# db = SQL(os.getenv("DATABASE_URL"))
+db = SQL("sqlite:///volunteersNet.db")
 # redirect user to homepage if they are not logged in
 
 
@@ -102,6 +102,7 @@ def signup():
         session["user_id"] = user_id
         session["user_mode"] = db.execute(
             "SELECT mode FROM users WHERE username=?", username)[0]['mode']
+        flash("You have successfully registered!", 'info')
         return redirect('/')
     else:
         return render_template('signup.html')
@@ -160,8 +161,8 @@ def contact():
 
         # send the message to the admin as if it was sent from a single common email
         # THIS IS JUST A TEMPORARY EMAIL
-        admin = "xijoyak250@186site.com"
-        common_sender_email = "temp_mail"
+        admin = "pasiki1202@enamelme.com"
+        common_sender_email = "cyzajyfu@onekisspresave.com"
         common_sender_password = "1234"
         try:
             server = smtplib.SMTP("smtp.gmail.com", 587)
