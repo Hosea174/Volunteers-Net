@@ -32,10 +32,9 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL(os.getenv("DATABASE_URL"))
-# db = SQL("sqlite:///volunteersNet.db")
+
+
 # redirect user to homepage if they are not logged in
-
-
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -162,15 +161,17 @@ def contact():
         # send the message to the admin as if it was sent from a single common email
         # THIS IS JUST A TEMPORARY EMAIL
         admin = "pasiki1202@enamelme.com"
-        common_sender_email = "cyzajyfu@onekisspresave.com"
-        common_sender_password = "1234"
+        common_sender_email = os.getenv('EMAIL')
+        common_sender_password = os.getenv('PASSWORD')
         try:
             server = smtplib.SMTP("smtp.gmail.com", 587)
             server.starttls()
             server.login(common_sender_email, common_sender_password)
             server.sendmail(common_sender_email, admin, message)
             server.quit()
-        except:
+            flash("Message sent successfully!", "info")
+        except Exception as e:
+            print(e)
             flash("Couldn't send email, try again", "danger")
         return redirect('/contact')
     else:
