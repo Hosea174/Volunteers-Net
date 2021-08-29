@@ -13,9 +13,9 @@ html {
 /* navbar */
 img[id="logo"] {
   position: fixed;
-  top: 0px;
-  width: 132px;
-  height: 60px;
+  top: 9px;
+  width: 90px;
+  height: 43px;
 }
 #menus {
   position: absolute;
@@ -46,10 +46,10 @@ img[id="logo"] {
   height: 63px;
 }
 
-#contact-page {
-  width: 100%;
-  height: 760px;
+body {
   background-color: #ecc80f;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 }
 

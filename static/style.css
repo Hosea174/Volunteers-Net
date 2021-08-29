@@ -15,10 +15,11 @@ html {
 
 /* navbar */
 img[id="logo"] {
-  position: absolute;
-  top: 0px;
-  width: 132px;
-  height: 60px;
+  position: fixed;
+  top: 9px;
+  left: 17px;
+  width: 90px;
+  height: 43px;
 }
 #menus {
   position: absolute;
@@ -263,10 +264,12 @@ img {
   font-size: 21px;
   padding: 15px;
   font-family: "Work Sans", sans-serif;
-
   color: white;
 }
-
+.heart {
+  color: rgb(245, 0, 0);
+  font-size: 30px;
+}
 #newsletter {
   padding: 5%;
   display: flex;
@@ -503,5 +506,79 @@ img {
   }
   #copyright {
     font-size: 13px;
+  }
+}
+@media (max-width: 465px) {
+  .web-info h1 {
+    font-size: 30px;
+  }
+  .web-info h2 {
+    font-size: 14px;
+    line-height: inherit;
+  }
+  .btn {
+    font-size: 13px;
+    width: 130px;
+    height: 30px;
+  }
+  .slide-container {
+    width: 320px;
+  }
+  .description,
+  .carousel-item img {
+    width: 265px;
+    min-height: 313px;
+    margin: 10px;
+  }
+  .description p {
+    font-size: 14px;
+  }
+  .description h2 {
+    font-size: 18px;
+  }
+
+  .carousel-inner,
+  #carouselExampleIndicators {
+    width: 320px;
+    height: 740px;
+  }
+  .otro-blockquote {
+    width: 83%;
+    font-size: 16px;
+    top: 0;
+  }
+  .circle {
+    width: 90px;
+    height: 90px;
+  }
+  .circle p,
+  .heart {
+    font-size: 9px;
+  }
+  #newsletter h3 {
+    font-size: 20px;
+  }
+  #newsletter {
+    font-size: 13px;
+  }
+  #newsletter input[type="submit"],
+  #newsletter input[type="email"] {
+    width: 279px;
+    font-size: 13px;
+  }
+  .footer-links {
+    right: 0;
+  }
+  .footer-links a {
+    font-size: 11px;
+  }
+  #copyright {
+    font-size: 12px;
+  }
+  #social-media img {
+    width: 45px;
+    height: 35px;
+    position: relative;
+    top: 10px;
   }
 }

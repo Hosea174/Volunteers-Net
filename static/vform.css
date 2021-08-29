@@ -14,9 +14,9 @@ html {
 /* navbar */
 img[id="logo"] {
   position: fixed;
-  top: 0px;
-  width: 132px;
-  height: 60px;
+  top: 9px;
+  width: 90px;
+  height: 43px;
 }
 #menus {
   position: absolute;
@@ -46,10 +46,11 @@ img[id="logo"] {
   background-color: #2f3936;
   height: 63px;
 }
-main {
+body {
   background-image: url("./images/david-marcu-78A265wPiO4-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 #volunteer-form {
   margin: auto;
@@ -264,5 +265,16 @@ input[type="submit"]:hover {
     padding: 2px 10px;
     position: relative;
     bottom: 20px;
+  }
+  #social-media img {
+    position: relative;
+    left: 44px;
+  }
+}
+@media (max-width: 500px) {
+  .form-control,
+  #other-text,
+  .vform input[type="submit"] {
+    width: 400px;
   }
 }

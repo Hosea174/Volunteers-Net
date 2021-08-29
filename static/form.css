@@ -13,9 +13,9 @@ html {
 /* navbar */
 img[id="logo"] {
   position: fixed;
-  top: 0px;
-  width: 132px;
-  height: 60px;
+  top: 9px;
+  width: 90px;
+  height: 43px;
 }
 #menus {
   position: absolute;

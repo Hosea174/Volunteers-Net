@@ -13,9 +13,9 @@ html {
 /* navbar */
 img[id="logo"] {
   position: fixed;
-  top: 0px;
-  width: 132px;
-  height: 60px;
+  top: 9px;
+  width: 90px;
+  height: 43px;
 }
 #menus {
   position: absolute;
@@ -45,12 +45,13 @@ img[id="logo"] {
   background-color: #2f3936;
   height: 63px;
 }
-main {
+body {
   background-image: url("./images/elke-karin-lugert-GraajutbJHE-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
+
 #search-results {
   width: 1140px;
   background-color: #ab7b55d7;
