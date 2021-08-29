@@ -155,7 +155,7 @@ def contact():
         password = request.form.get('password')
         subject = request.form.get('subject')
         message = request.form.get('message')
-        message = 'Subject: {}\n\nYou have recieved a new email from.{}\n{}'.format(
+        message = 'Subject: {}\n\nYou have recieved a new email from {}\n{}'.format(
             subject, email, message)
 
         # send the message to the admin as if it was sent from a single common email
