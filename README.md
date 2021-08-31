@@ -1,0 +1,4 @@
+# Volunteers Net
+#### Video Demo:  <URL HERE>
+#### Description:
+This project is a web app connects volunteers with non-profit organizations. The way it works is that the user signs in as either a 'Volunteer' or a 'non-profit organization (recruiter)'. Volunteers will fill out a form based on the days they can work on and the activities that they are interested in, along with their personal information like email, phone number and location. And then 'recruiters' will be able to filter this collected data by providing the parameters they are looking for. After that, the recruiter can send requests to the volunteers. Volunteers will then accept or reject the offer they've recived.

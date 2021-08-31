@@ -319,7 +319,7 @@ img {
   min-height: 200px;
   position: relative;
   box-sizing: border-box;
-  background: #1e1f1e;
+  background: #454465;
   padding: 10px 0;
   text-align: center;
 }
@@ -347,10 +347,11 @@ img {
   display: flex;
   justify-content: center;
   position: relative;
-  right: 50px;
+  right: 60px;
 }
 #social-media img {
   padding: 0 3px;
+  margin-right: 5px;
   cursor: pointer;
   width: 60px;
   height: 50px;

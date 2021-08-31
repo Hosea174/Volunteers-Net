@@ -160,7 +160,7 @@ def contact():
 
         # send the message to the admin as if it was sent from a single common email
         # THIS IS JUST A TEMPORARY EMAIL
-        admin = "pasiki1202@enamelme.com"
+        admin = "totamoc433@macauvpn.com"
         common_sender_email = os.getenv('EMAIL')
         common_sender_password = os.getenv('PASSWORD')
         try:
@@ -220,7 +220,7 @@ def vform():
         db.execute(
             "INSERT INTO applications (applicant_id, fname, lname, age, phone, country, city, street1, street2, days, activities) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             user_id, fname, lname, age, phone, country, city, street1, street2, str(days), str(activities))
-
+        flash("You have successfully submitted this form", "info")
         return redirect('/')
     else:
         current_row = db.execute(
